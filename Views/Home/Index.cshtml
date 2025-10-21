@@ -1,0 +1,36 @@
+﻿@model System_Profiling_Utility.Models.SystemInfoViewModel
+@{
+    ViewData["Title"] = "System Information";
+}
+
+<div class="text-center">
+    <h1 class="display-4">System Information Viewer</h1>
+</div>
+
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card shadow-sm mb-3">
+            <div class="card-header"><strong>Operating System</strong></div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-list"><strong>Version:</strong> @Model.OSArchitecture</li>
+                <li class="list-group-list"><strong>Architecture:</strong> @Model.OSArchitecture</li>
+            </ul>
+        </div>
+
+        <div class="card shadow-sm mb-3">
+            <div class="card-header"><strong>Processor (CPU)</strong></div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Name:</strong> @Model.ProcessorName</li>
+                <li class="list-group-item"><strong>Logical Cores:</strong> @Model.ProcessorCount</li>
+            </ul>
+        </div>
+
+        <div class="card shadow-sm mb-3">
+            <div class="card-header"><strong>Memory (RAM)</strong></div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-list"><strong>Total Memory:</strong> @Model.TotalMemoryGb GB</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
