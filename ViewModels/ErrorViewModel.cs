@@ -1,4 +1,4 @@
-namespace System_Profiling_Utility.Models
+namespace System_Profiling_Utility.ViewModels
 {
 
     public class ErrorViewModel

@@ -1,39 +1,32 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using System_Profiling_Utility.Models;
-using Hardware.Info;
+using System_Profiling_Utility.ViewModels;
+using System_Profiling_Utility.Services.Interfaces;
 
 namespace System_Profiling_Utility.Controllers
 {
 
     public class HomeController : Controller
     {
-        private static readonly IHardwareInfo hardwareInfo = new HardwareInfo();
-        private readonly ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProcessorService processorService)
         {
-            _logger = logger;
+            _processorService = processorService;
         }
-
+        private readonly IProcessorService _processorService;
         public IActionResult Index()
         {
-            hardwareInfo.RefreshAll();
+            var cpu = _processorService.GetProcessorInfo();
 
-            var viewModel = new SystemInfoViewModel();
-
-            viewModel.OSVersion = hardwareInfo.OperatingSystem.ToString();
-            viewModel.OSArchitecture = System.Runtime.InteropServices.RuntimeInformation.OSArchitecture.ToString();
-
-            var cpu = hardwareInfo.CpuList.FirstOrDefault();
-            if (cpu != null)
+            var vm = new DashboardOverviewViewModel
             {
-                viewModel.ProcessorName = cpu.Name.Trim();
-                viewModel.ProcessorCount = (int)cpu.NumberOfLogicalProcessors;
-            }
-
-            viewModel.TotalMemoryGb = Math.Round(hardwareInfo.MemoryStatus.TotalPhysical / 1073741824.0, 2);
-
-            return View(viewModel);
+                OSVersion = "N/A",
+                OSArchitecture = cpu.Architecture,
+                ProcessorName = cpu.Name,
+                ProcessorCount = (int)cpu.ThreadCount,
+                TotalMemoryGb = 0
+            };
+            return View(vm);
         }
 
         public IActionResult Privacy()

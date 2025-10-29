@@ -1,6 +1,6 @@
-namespace  System_Profiling_Utility.Models
+namespace  System_Profiling_Utility.ViewModels
 {
-    public class SystemInfoViewModel
+    public class DashboardOverviewViewModel
     {
         // OS Info
         public string? OSVersion { get; set; }
