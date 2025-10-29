@@ -1,0 +1,128 @@
+/*
+  =================================
+  THE SOURCE OF TRUTH FOR ALL STYLES
+  =================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+$terminal-bg: #070112;
+$terminal-fg: #00ff41;
+$terminal-text: #fdfdfd;
+$terminal-hover: #2de2e6;
+
+
+// ========== Global Styles ==========
+body {
+    font-family: "Fira Code", monospace;
+    background-color: $terminal-bg;
+    color: $terminal-fg;
+    overflow-x: hidden;
+}
+
+// ========== Sidebar ==========
+.sidebar {
+    width: 280px;
+    background-color: darken($terminal-bg, 3%);
+    border-right: 2px solid $terminal-fg;
+    padding: 1.5rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+
+    .sidebar-title {
+        color: $terminal-text;
+        font-size: 1.25rem;
+        text-decoration: none;
+    }
+
+    .blinking-cursor {
+        background-color: $terminal-fg;
+        animation: 1s blink step-end infinite;
+    }
+
+    @keyframes blink {
+
+        from,
+        to {
+            background-color: transparent;
+        }
+
+        50% {
+            background-color: $terminal-fg;
+        }
+    }
+
+    .nav-link {
+        color: $terminal-text;
+        font-size: 1rem;
+        border-radius: 0;
+
+        i {
+            margin-right: 10px;
+            color: $terminal-text;
+        }
+
+        &:hover {
+            color: $terminal-fg;
+            background-color: lighten($terminal-bg, 5%);
+
+            i{
+                color: $terminal-fg;
+            }
+        }
+
+        &.active {
+            color: $terminal-bg;
+            background-color: $terminal-fg;
+
+            i{
+               color: $terminal-bg; 
+            }
+        }
+    }
+
+    .text-muted {
+        color: #6B7075 !important;
+    }
+
+    .divider {
+        color: $terminal-fg;
+    }
+}
+
+// ========== Main Content ==========
+.main-content {
+    margin-left: 280px;
+    padding: 2rem;
+    width: calc(100% - 280px);
+    overflow-y: auto;
+    height: 100vh;
+}
+
+// ========== Card Overrides ==========
+.card {
+    border-radius: 0;
+    border: 1px solid $terminal-fg;
+    background-color: lighten($terminal-bg, 3%);
+
+    .card-header {
+        color: $terminal-fg;
+        border-bottom: 1px solid $terminal-fg;
+        background-color: lighten($terminal-bg, 5%);
+    }
+
+    .list-group-item {
+        background-color: transparent;
+        border-bottom: 1px dashed rgba($terminal-fg, 0.3);
+        color: $terminal-fg;
+        display: flex;
+        justify-content: space-between;
+
+        strong,
+        .badge {
+            color: $terminal-hover;
+        }
+    }
+}

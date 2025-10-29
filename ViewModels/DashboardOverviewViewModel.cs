@@ -13,6 +13,5 @@ namespace  System_Profiling_Utility.Models
         // Memory Info
         public double TotalMemoryGb { get; set; }
 
-
     }
 }

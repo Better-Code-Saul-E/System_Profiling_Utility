@@ -1,70 +1,108 @@
-## Build artifacts
-/bin/
-/obj/
-/out/
-/Debug/
-/Release/
+### 🧱 .NET / ASP.NET Core ###
+# Build results
+bin/
+obj/
 
-## Visual Studio / Rider / VS Code
+# User-specific files
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
-.vs/
-.idea/
+
+# Visual Studio Code settings (optional)
 .vscode/
 
-## Generated files
+# Build logs
 *.log
-*.tlog
-*.cache
-*.pdb
+
+# Backup & temporary files
 *.tmp
+*.temp
 *.bak
-*.pidb
-*.svclog
+*.old
+
+# Publish output
+**/publish/
+**/wwwroot/dist/
+**/wwwroot/build/
+*.Publish.xml
+
+# Generated files
 *.dll
 *.exe
-
-## ASP.NET / .NET Core specific
-*.deps.json
+*.pdb
+*.cache
+*.config
+*.json.deps
 *.runtimeconfig.json
 *.staticwebassets.runtime.json
 *.dbmdl
 *.dbproj.schemaview
-*.localhistory
-*.db
-*.mdf
-*.ldf
+*.dbmdl
 *.bak
+*.rdl.data
+*.rdl.designer.cs
 
-## NuGet
+# NuGet
 *.nupkg
 *.snupkg
-*.nuspec
-project.lock.json
-project.fragment.lock.json
-artifacts/
 .nuget/
+project.lock.json
+artifacts/
 packages/
 *.nuget.props
 *.nuget.targets
 
-## Environment and secrets
-appsettings.Development.json
-secrets.json
-launchSettings.json
+# Rider / JetBrains
+.idea/
 
-## Publish output
-/publish/
-/dist/
-/wwwroot/lib/
+### 💾 Node / Frontend ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnp/
+.pnp.js
 
-## OS / Misc
+# Parcel / build outputs
+.cache/
+dist/
+.parcel-cache/
+
+# Sass cache
+.sass-cache/
+*.css.map
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+### 🧩 Misc ###
+# macOS metadata
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs & system junk
 Thumbs.db
 desktop.ini
 
-## Logs
-*.log
-logs/
+# VS auto-generated folders
+GeneratedMSBuildEditorConfig.editorconfig
+scopedcss/
+ref/
+refint/
+
+### ✅ Allow project essentials ###
+!appsettings.json
+!appsettings.Development.json
+!System_Profiling_Utility.csproj
+!System_Profiling_Utility.sln
+!README.md

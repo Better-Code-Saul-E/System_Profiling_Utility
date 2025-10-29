@@ -1,22 +1,102 @@
-html {
-  font-size: 14px;
+/*
+  =================================
+  THE SOURCE OF TRUTH FOR ALL STYLES
+  =================================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
+body {
+  font-family: "Fira Code", monospace;
+  background-color: #070112;
+  color: #00ff41;
+  overflow-x: hidden;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+.sidebar {
+  width: 280px;
+  background-color: rgb(1.3631578947, 0.1947368421, 3.5052631579);
+  border-right: 2px solid #00ff41;
+  padding: 1.5rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-shrink: 0;
+}
+.sidebar .sidebar-title {
+  color: #fdfdfd;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.sidebar .blinking-cursor {
+  background-color: #00ff41;
+  animation: 1s blink step-end infinite;
+}
+@keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #00ff41;
   }
 }
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.sidebar .nav-link {
+  color: #fdfdfd;
+  font-size: 1rem;
+  border-radius: 0;
+}
+.sidebar .nav-link i {
+  margin-right: 10px;
+  color: #fdfdfd;
+}
+.sidebar .nav-link:hover {
+  color: #00ff41;
+  background-color: rgb(16.3947368421, 2.3421052632, 42.1578947368);
+}
+.sidebar .nav-link:hover i {
+  color: #00ff41;
+}
+.sidebar .nav-link.active {
+  color: #070112;
+  background-color: #00ff41;
+}
+.sidebar .nav-link.active i {
+  color: #070112;
+}
+.sidebar .text-muted {
+  color: #6B7075 !important;
+}
+.sidebar .divider {
+  color: #00ff41;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.main-content {
+  margin-left: 280px;
+  padding: 2rem;
+  width: calc(100% - 280px);
+  overflow-y: auto;
+  height: 100vh;
 }
 
-body {
-  margin-bottom: 60px;
+.card {
+  border-radius: 0;
+  border: 1px solid #00ff41;
+  background-color: rgb(12.6368421053, 1.8052631579, 32.4947368421);
 }
+.card .card-header {
+  color: #00ff41;
+  border-bottom: 1px solid #00ff41;
+  background-color: rgb(16.3947368421, 2.3421052632, 42.1578947368);
+}
+.card .list-group-item {
+  background-color: transparent;
+  border-bottom: 1px dashed rgba(0, 255, 65, 0.3);
+  color: #00ff41;
+  display: flex;
+  justify-content: space-between;
+}
+.card .list-group-item strong,
+.card .list-group-item .badge {
+  color: #2de2e6;
+}
+
+/*# sourceMappingURL=site.css.map */

@@ -1,0 +1,22 @@
+{
+  "name": "system_profiling_utility",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+"sass:watch": "sass --watch wwwroot/scss/site.scss:wwwroot/css/site.css"  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Better-Code-Saul-E/System_Profiling_Utility.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Better-Code-Saul-E/System_Profiling_Utility/issues"
+  },
+  "homepage": "https://github.com/Better-Code-Saul-E/System_Profiling_Utility#readme",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
